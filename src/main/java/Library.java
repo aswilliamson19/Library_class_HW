@@ -24,10 +24,10 @@ public class Library {
         this.books.remove(book);
     }
 
-    public void lendBook(Borrower borrower) {
-        if (this.bookCount() > 0) {
-            this.books.removeBook();
-            Book bookBorrowed = borrower.addBook(book);
+    public void lendBook(Book book, Borrower borrower) {
+        if (this.books.contains(book)) {
+            this.books.remove(book);
+            borrower.addBook(book);
         }
     }
 }
